@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+ *{
+        box-sizing: border-box;
+ }
+
+ body{
+
+    font-family:  Merriweather, sans-serif;
+    background-color: rgb(214, 228, 241);
+ }
+
+
+ .main-container{
+    background-color: brown;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    height: 40.5rem;
+ }
+
+ .questions-container{
+    background-color: blue;
+ }
+
+
+ footer{
+
+    background-color: blueviolet;
+    height: 3.1rem;
+    width: 100%;
+    align-content: space-around;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
