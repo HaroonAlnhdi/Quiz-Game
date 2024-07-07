@@ -68,7 +68,7 @@ h1{
    justify-content: center;
    flex-wrap: wrap;
  }
- #start-button{
+ .start-button{
    font-family: Merriweather, sans-serif;
    /* background-color: #657ED4; */
    text-align: center;
@@ -79,7 +79,7 @@ h1{
    font-weight: 500;
    margin: 0 auto;
  }
- #start-button:hover{
+ .start-button:hover{
 
    background-color:#3668c1;
    font-size: 1.8rem;
@@ -117,7 +117,7 @@ h1{
  footer{
     margin: 0;
     border: 2px solid black;
-    background-color: #3668c1;
+    background-color: #657ED4;
     height: 3.1rem;
     /* width: 100vw; */
     align-content: space-around;
