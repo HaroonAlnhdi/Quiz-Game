@@ -299,6 +299,7 @@ let index = 0
  const nextBtn = document.querySelector('.Next')
  const resetBtn = document.querySelector('.reset')
  const messsage = document.querySelector('.messages')
+ const timeDisplay = document.getElementById('time');
  const dislayCountQueston = document.querySelector('#correct-score')
 //  console.log(startBtn);
 //  console.log(body)
@@ -312,39 +313,36 @@ let index = 0
        questionsContainer.hidden = false ;
        messeageContainer.hidden = false
        showQuestions(index);
+       Timer(1)
     }
 
         const nextQuestion =() =>{
             // console.log('click')
             index++;
-               
+              
             if (index < questionsArr.length) {
                 dislayCountQueston.innerHTML = 1 + index ; 
                  return showQuestions(index); 
         }else {
             console.log('End of questions');
             messsage.innerText = " Complite Questions  "
-            stopTimer()
+            stopTimer() 
         }
     }
 
-    const Timer = () => { 
-
-        const timeDisplay = document.getElementById('time');
-        timer = 0; // Reset the time elapsed
-        timeDisplay.innerText = timer;
+    const Timer = (time) => { 
+   
+       let  counter = setInterval(timer,1000)
+        function timer(){
+            timeDisplay.textContent = time
+            time ++;
+        }
     
-        clearInterval(timer); // Clear any previous timer
-    
-        timerInterval = setInterval(() => {
-            timer++;
-            timeDisplay.innerText = timer;
-        }, 1000);
-
     }
 
     const stopTimer = () => {
-        clearInterval(timerInterval); // Stop the timer
+      let finaltime =  clearInterval(timer); 
+      timeDisplay.textContent = finaltime;
     };
 
 
@@ -370,7 +368,7 @@ let index = 0
             optionsList.appendChild(li);
         });
 
-        Timer()
+       
     };
     
    
