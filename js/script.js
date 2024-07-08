@@ -285,6 +285,7 @@ const questionsArr = [
 
 /*-------------------------------- Variables --------------------------------*/
 let timer ;
+let finaltime;
 let score;
 let countQueston = 0;
 let index = 0
@@ -316,35 +317,38 @@ let index = 0
        Timer(1)
     }
 
-        const nextQuestion =() =>{
-            // console.log('click')
-            index++;
-              
-            if (index < questionsArr.length) {
-                dislayCountQueston.innerHTML = 1 + index ; 
-                 return showQuestions(index); 
-        }else {
-            console.log('End of questions');
-            messsage.innerText = " Complite Questions  "
-            stopTimer() 
-        }
-    }
-
+       
+        let counter
     const Timer = (time) => { 
    
-       let  counter = setInterval(timer,1000)
+        counter = setInterval(timer,1000)
         function timer(){
             timeDisplay.textContent = time
             time ++;
+            //to get the last time to used to print -- use (-1) to make the time currect 
+            finaltime = time -1
         }
     
     }
 
     const stopTimer = () => {
-      let finaltime =  clearInterval(timer); 
-      timeDisplay.textContent = finaltime;
+      clearInterval(counter); 
+       
     };
 
+    const nextQuestion =() =>{
+        // console.log('click')
+        index++;
+          
+        if (index < questionsArr.length) {
+            dislayCountQueston.innerHTML = 1 + index ; 
+             return showQuestions(index); 
+    }else {
+        console.log('End of questions');
+        messsage.innerText = " Complite Questions , Time: " + finaltime ;
+        stopTimer() 
+    }
+}
 
     const showQuestions = (index) => {
         // Display questions :
