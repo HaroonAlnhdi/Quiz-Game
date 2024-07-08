@@ -299,19 +299,21 @@ const questionsArr = [
     }
 ];
 
- 
+
 
 
 
 /*-------------------------------- Variables --------------------------------*/
 let timer ;
 let score;
-let countQueston;
+let countQueston = 0;
 
 /*------------------------ Cached Element References ------------------------*/
  const startBtn = document.querySelector('.start-button');
  const body = document.querySelector('body');
+ const displayQuestion = document.querySelector('.displayQuestion')
  const questionsContainer = document.querySelector('.questions-container');
+ const optionsQus = document.querySelector('#optionss')
  const messeageContainer = document.querySelector('.messsage-container')
  const next = document.querySelector('.Next')
  const reset =document.querySelector('.reset')
@@ -327,13 +329,24 @@ let countQueston;
        startcont.hidden = true ;
        questionsContainer.hidden = false ;
        messeageContainer.hidden = false
+       showQuestions(0);
     }
 
 
-    const showQuestions = () => {
+    const showQuestions = (index) => {
       
-      
+        let question = questionsArr.forEach(ques =>{
+            let answer = ques.answer
+            let question = ques.question
+            let id = ques.id
+            let options = ques.options
+            let optionList = options
+        //    console.log(question)
 
+        
+            let que_tag =  questionsArr[index].question ;
+            displayQuestion.innerText = que_tag
+        })
 
     }
    
@@ -341,3 +354,12 @@ let countQueston;
 /*----------------------------- Event Listeners -----------------------------*/
 
  startBtn.addEventListener('click' ,start ); 
+
+
+
+
+
+
+
+
+
