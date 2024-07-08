@@ -334,21 +334,23 @@ let countQueston = 0;
 
 
     const showQuestions = (index) => {
-      
-        let question = questionsArr.forEach(ques =>{
-            let answer = ques.answer
-            let question = ques.question
-            let id = ques.id
-            let options = ques.options
-            let optionList = options
-        //    console.log(question)
-
+        let que_tag = questionsArr[index].question;
+        displayQuestion.innerText = que_tag;
+         
         
-            let que_tag =  questionsArr[index].question ;
-            displayQuestion.innerText = que_tag
-        })
-
+        //clear the previos one
+        let optionsList = document.getElementById("optionss");
+        optionsList.innerHTML = '';
+    
+        //print the options 
+        let option_tag = '<li>' + questionsArr[index].options[0] + '</li>' +
+                        '<li>' + questionsArr[index].options[1] + '</li>' +
+                        '<li>' + questionsArr[index].options[2] + '</li>' +
+                        '<li>' + questionsArr[index].options[3] + '</li>';
+    
+        optionsList.innerHTML = option_tag;
     }
+    
    
 
 /*----------------------------- Event Listeners -----------------------------*/
