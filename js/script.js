@@ -1,26 +1,6 @@
 const questionsArr = [
-    {
-    id: 1,
-    question: "What does HTML stand for?",
-    answer: "HyperText Markup Language",
-    options: [
-        "HyperText Markup Language",
-        "HyperText Machine Language",
-        "HyperTool Multi Language",
-        "HyperText and links Markup Language"
-    ]
-    },
-    {
-    id: 2,
-    question: "What is the purpose of the <head> tag in HTML?",
-    answer: "To contain meta-information about the document",
-    options: [
-        "To display the main content of the webpage",
-        "To contain meta-information about the document",
-        "To create headers for sections",
-        "To define the body of the document"
-    ]
-    },
+   
+   
     {
     id: 3,
     question: "What tag is used to create a hyperlink in HTML?",
@@ -319,7 +299,7 @@ let index = 0
  const nextBtn = document.querySelector('.Next')
  const resetBtn = document.querySelector('.reset')
  const messsage = document.querySelector('.messages')
- 
+ const dislayCountQueston = document.querySelector('#correct-score')
 //  console.log(startBtn);
 //  console.log(body)
 
@@ -335,16 +315,37 @@ let index = 0
     }
 
         const nextQuestion =() =>{
-            console.log('click')
-            // index = 0;
-            index++; 
+            // console.log('click')
+            index++;
+               
             if (index < questionsArr.length) {
+                dislayCountQueston.innerHTML = 1 + index ; 
                  return showQuestions(index); 
         }else {
             console.log('End of questions');
             messsage.innerText = " Complite Questions  "
+            stopTimer()
         }
     }
+
+    const Timer = () => { 
+
+        const timeDisplay = document.getElementById('time');
+        timer = 0; // Reset the time elapsed
+        timeDisplay.innerText = timer;
+    
+        clearInterval(timer); // Clear any previous timer
+    
+        timerInterval = setInterval(() => {
+            timer++;
+            timeDisplay.innerText = timer;
+        }, 1000);
+
+    }
+
+    const stopTimer = () => {
+        clearInterval(timerInterval); // Stop the timer
+    };
 
 
     const showQuestions = (index) => {
@@ -368,6 +369,8 @@ let index = 0
             li.textContent = options[idx];
             optionsList.appendChild(li);
         });
+
+        Timer()
     };
     
    
