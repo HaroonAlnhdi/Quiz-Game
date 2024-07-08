@@ -165,12 +165,12 @@ box-shadow: 0 5px 0 0 #bbb;
    font-family: Merriweather, sans-serif;
    text-align: center;
    /* border: none; */
-   width: 15vw;
+   /* width: 10vw; */
    border-radius: 10px;
    outline: 0;
    font-size: 1.3rem;
    font-weight: 500;
-   margin: 0 auto;
+   margin: 0 10px;
    cursor: pointer;
  }
 
@@ -206,3 +206,15 @@ box-shadow: 0 5px 0 0 #bbb;
     align-items: center;
     justify-content: center;
  }
+
+
+ /* Media Quary */
+
+ @media (max-width: 999px)  {
+
+  .reset , .Next {
+    padding: 0px 0 0px 0;
+    width: 13vw;
+  }
+    
+  }
