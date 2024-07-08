@@ -83,6 +83,11 @@ h1{
 
    background-color:#3668c1;
    font-size: 1.8rem;
+   cursor: pointer;
+ }
+
+ .questionNumber{
+   border-bottom: 2px solid;
  }
 
  .timeScore{
@@ -183,6 +188,7 @@ box-shadow: 0 5px 0 0 #bbb;
 
     background-color: blanchedalmond;
     text-align: center;
+    margin: 15px 0 0 0;
  }
 
  .gamename{
