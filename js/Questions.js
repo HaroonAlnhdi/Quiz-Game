@@ -1,4 +1,4 @@
-        const questions = [
+ const questionsArr = [
             {
             id: 1,
             question: "What does HTML stand for?",
@@ -220,6 +220,7 @@
             ]
             },
             {
+                
             id: 21,
             question: "What does 'var' stand for in JavaScript?",
             answer: "variable",
@@ -297,4 +298,6 @@
             ]
             }
         ];
+
+        module.exports = questionsArr
         
