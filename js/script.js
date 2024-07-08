@@ -307,6 +307,7 @@ const questionsArr = [
 let timer ;
 let score;
 let countQueston = 0;
+let index = 0
 
 /*------------------------ Cached Element References ------------------------*/
  const startBtn = document.querySelector('.start-button');
@@ -315,8 +316,9 @@ let countQueston = 0;
  const questionsContainer = document.querySelector('.questions-container');
  const optionsQus = document.querySelector('#optionss')
  const messeageContainer = document.querySelector('.messsage-container')
- const next = document.querySelector('.Next')
- const reset =document.querySelector('.reset')
+ const nextBtn = document.querySelector('.Next')
+ const resetBtn = document.querySelector('.reset')
+ const messsage = document.querySelector('.messages')
  
 //  console.log(startBtn);
 //  console.log(body)
@@ -329,34 +331,52 @@ let countQueston = 0;
        startcont.hidden = true ;
        questionsContainer.hidden = false ;
        messeageContainer.hidden = false
-       showQuestions(0);
+       showQuestions(index);
+    }
+
+        const nextQuestion =() =>{
+            console.log('click')
+            // index = 0;
+            index++; 
+            if (index < questionsArr.length) {
+                 return showQuestions(index); 
+        }else {
+            console.log('End of questions');
+            messsage.innerText = " Complite Questions  "
+        }
     }
 
 
     const showQuestions = (index) => {
+        // Display questions :
         let que_tag = questionsArr[index].question;
         displayQuestion.innerText = que_tag;
-         
-        
-        //clear the previos one
+
+    
+        // Clear previous options
         let optionsList = document.getElementById("optionss");
-        optionsList.innerHTML = '';
+        optionsList.innerHTML = ''; 
+        let options = questionsArr[index].options;
     
-        //print the options 
-        let option_tag = '<li>' + questionsArr[index].options[0] + '</li>' +
-                        '<li>' + questionsArr[index].options[1] + '</li>' +
-                        '<li>' + questionsArr[index].options[2] + '</li>' +
-                        '<li>' + questionsArr[index].options[3] + '</li>';
+        // Generate random indices for options
+        let randomIndices = Array.from({ length: options.length }, (_, i) => i);
+        randomIndices.sort(() => Math.random() - 0.5); 
     
-        optionsList.innerHTML = option_tag;
-    }
+        // Display options
+        randomIndices.forEach(idx => {
+            let li = document.createElement('li');
+            li.textContent = options[idx];
+            optionsList.appendChild(li);
+        });
+    };
     
    
 
 /*----------------------------- Event Listeners -----------------------------*/
 
  startBtn.addEventListener('click' ,start ); 
-
+ nextBtn.addEventListener('click'  ,nextQuestion)
+//  resetBtn.addEventListener('click' , playAgain )
 
 
 
