@@ -346,7 +346,7 @@ let index = 0
              return showQuestions(index); 
     }else {
         console.log('End of questions');
-        message.innerText = " Complite Questions , Time: " + finaltime + 'Score : '+ score ;
+        message.innerText = " Complite Questions , Time: " + finaltime + '  Score : '+ score ;
         stopTimer() 
         
     }
@@ -375,6 +375,7 @@ let index = 0
         });
        
         selectOption();
+        checkAnswer();
         
     };
     
@@ -392,35 +393,18 @@ let index = 0
             }
             console.log('click')
             option.classList.add('selected')
+            nextBtn.disabled = false
             
         })
        })
     }
     
     
-    // const checkAnswer = (event) => {
-    //     const selectedOption = event.target;
-       
-    //     const selectedAnswer = selectedOption.textContent;
-    //     console.log(selectedAnswer)
-    //     const correctAnswer = selectedOption.questionsArr.answer;
+    const checkAnswer = () => {
+        
+        nextBtn.disabled = true
+    }
     
-    //     if (!selectedAnswer) {
-    //         message.textContent = "Please select an option!";
-    //         return;
-    //     }
-    
-    //     if (selectedAnswer === correctAnswer) {
-    //         score++;
-    //         message.textContent = "Correct!";
-    //     } else {
-    //         message.textContent = "Incorrect! The correct answer is: " + correctAnswer;
-    //     }
-    // }
-    // optionsQus.querySelectorAll('li').forEach((option) => {
-    //     option.addEventListener('click', checkAnswer);
-    // });
-
     
    
 /*----------------------------- Event Listeners -----------------------------*/
