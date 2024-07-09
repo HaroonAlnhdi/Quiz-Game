@@ -286,7 +286,9 @@ const questionsArr = [
 /*-------------------------------- Variables --------------------------------*/
 let timer ;
 let finaltime;
-let score;
+let score = 0 ;
+let scorePersent = 0;
+let wrongAnswers = 0;
 let countQueston = 0;
 let index = 0
 
@@ -302,6 +304,8 @@ let index = 0
  const message = document.querySelector('.messages')
  const timeDisplay = document.getElementById('time');
  const dislayCountQueston = document.querySelector('#correct-score')
+ const scorePersentDisplay =document.querySelector('#scorePersent')
+
 //  console.log(startBtn);
 //  console.log(body)
 
@@ -339,6 +343,7 @@ let index = 0
 
     const nextQuestion =() =>{
         // console.log('click')
+        checkAnswer();
         index++;
           
         if (index < questionsArr.length) {
@@ -347,8 +352,9 @@ let index = 0
              return showQuestions(index); 
     }else {
         console.log('End of questions');
-        message.innerText = " Complite Questions , Time: " + finaltime + '  Score : '+ score ;
+        message.innerText = " Complite Questions , Time: " + finaltime + ' Seconds .   Score : '+ score +'  Wrong Answers: ' + wrongAnswers;
         stopTimer() 
+        nextBtn.disabled = true;
         
     }
 }
@@ -376,7 +382,7 @@ let index = 0
         });
        
         selectOption();
-        
+        nextBtn.disabled = true;
         
     };
     
@@ -394,8 +400,7 @@ let index = 0
                 activeOption.classList.remove('selected')
             }
             // console.log('click')
-            option.classList.add('selected')
-            checkAnswer();
+            option.classList.add('selected');
             nextBtn.disabled = false
             
         })
@@ -404,33 +409,30 @@ let index = 0
     
     
     const checkAnswer = () => {
-        
-        nextBtn.disabled = true
-        const activeOption = optionsQus.querySelector('.selected')
-        if(activeOption){
-            const selsectedAnswer = activeOption.textContent;
-            console.log(selsectedAnswer)
-
-
-
-                //correct answer from the questions array .
+        const activeOption = optionsQus.querySelector('.selected');
+        if (activeOption) {
+            const selectedAnswer = activeOption.textContent;
             const correctAnswer = questionsArr[index].answer;
-           console.log('Correct Answer:', correctAnswer);
 
-
-            
-            if (selsectedAnswer === correctAnswer) {
+            if (selectedAnswer === correctAnswer) {
                 score++;
+                scorePersent = (score/25)*100
+                scorePersentDisplay.innerHTML = scorePersent
                 message.textContent = "Correct!";
-            } //else {
-            //     message.textContent = `Incorrect! The correct answer is: ${correctAnswer}`;
-            // }
-            // } else {
-            //     message.textContent = "Please select an option!";
-            
-        
-    }}
+            } else {
+                wrongAnswers++;
+                message.textContent = `Incorrect! The correct answer is: ${correctAnswer}`;
+            }
+        } else {
+            message.textContent = "Please select an option!";
+        }
+    };
+
+   
     
+    const playAgain = () => {
+        location.reload();
+    };
     
     
    
@@ -438,8 +440,7 @@ let index = 0
 
  startBtn.addEventListener('click' ,start ); 
  nextBtn.addEventListener('click'  ,nextQuestion)
-//  optionsQus.addEventListener('click' , CheckAnswer)
-//  resetBtn.addEventListener('click' , playAgain )
+ resetBtn.addEventListener('click' , playAgain )
 
 
 
@@ -451,19 +452,6 @@ let index = 0
 
 
 
-// const checkAnswer = (index) => {
-        
-//     nextBtn.disabled = true
-//     const activeOption = optionsQus.querySelector('.selected')
-//     if(activeOption){
-//         let selsectedAnswer = activeOption.textContent;
-//         console.log(selsectedAnswer)
 
-//         let currectAnswer = questionsArr.answer
-//         console.log(currectAnswer)
-
-        
-//     }
-// }
 
 
