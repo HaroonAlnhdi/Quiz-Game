@@ -8,7 +8,7 @@
  body{
     margin: 0;
     font-family:  Merriweather, sans-serif;
-    background-color: rgb(214, 228, 241);
+    background-color: rgb(255, 255, 255);
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -19,7 +19,7 @@ h1{
    color: #3626A7;
 }
  .main-container{
-    background-color: rgb(247, 234, 234);
+    background-color: rgb(233, 233, 233);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

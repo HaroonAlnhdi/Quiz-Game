@@ -343,6 +343,7 @@ let index = 0
           
         if (index < questionsArr.length) {
             dislayCountQueston.innerHTML = 1 + index ; 
+            
              return showQuestions(index); 
     }else {
         console.log('End of questions');
@@ -375,7 +376,7 @@ let index = 0
         });
        
         selectOption();
-        checkAnswer();
+        
         
     };
     
@@ -389,10 +390,12 @@ let index = 0
 
         const activeOption = optionsQus.querySelector('.selected')
             if(optionsQus.querySelector('.selected')){
+                message.innerText = " Please Select Answer "
                 activeOption.classList.remove('selected')
             }
-            console.log('click')
+            // console.log('click')
             option.classList.add('selected')
+            checkAnswer();
             nextBtn.disabled = false
             
         })
@@ -403,7 +406,31 @@ let index = 0
     const checkAnswer = () => {
         
         nextBtn.disabled = true
-    }
+        const activeOption = optionsQus.querySelector('.selected')
+        if(activeOption){
+            const selsectedAnswer = activeOption.textContent;
+            console.log(selsectedAnswer)
+
+
+
+                //correct answer from the questions array .
+            const correctAnswer = questionsArr[index].answer;
+           console.log('Correct Answer:', correctAnswer);
+
+
+            
+            if (selsectedAnswer === correctAnswer) {
+                score++;
+                message.textContent = "Correct!";
+            } //else {
+            //     message.textContent = `Incorrect! The correct answer is: ${correctAnswer}`;
+            // }
+            // } else {
+            //     message.textContent = "Please select an option!";
+            
+        
+    }}
+    
     
     
    
@@ -423,5 +450,20 @@ let index = 0
 
 
 
+
+// const checkAnswer = (index) => {
+        
+//     nextBtn.disabled = true
+//     const activeOption = optionsQus.querySelector('.selected')
+//     if(activeOption){
+//         let selsectedAnswer = activeOption.textContent;
+//         console.log(selsectedAnswer)
+
+//         let currectAnswer = questionsArr.answer
+//         console.log(currectAnswer)
+
+        
+//     }
+// }
 
 
