@@ -299,7 +299,7 @@ let index = 0
  const messeageContainer = document.querySelector('.messsage-container')
  const nextBtn = document.querySelector('.Next')
  const resetBtn = document.querySelector('.reset')
- const messsage = document.querySelector('.messages')
+ const message = document.querySelector('.messages')
  const timeDisplay = document.getElementById('time');
  const dislayCountQueston = document.querySelector('#correct-score')
 //  console.log(startBtn);
@@ -315,7 +315,7 @@ let index = 0
        messeageContainer.hidden = false
        showQuestions(index);
        Timer(1)
-       
+    //    checkAnswer();
     }
 
        
@@ -346,7 +346,7 @@ let index = 0
              return showQuestions(index); 
     }else {
         console.log('End of questions');
-        messsage.innerText = " Complite Questions , Time: " + finaltime ;
+        message.innerText = " Complite Questions , Time: " + finaltime + 'Score : '+ score ;
         stopTimer() 
         
     }
@@ -375,6 +375,7 @@ let index = 0
         });
        
         selectOption();
+        
     };
     
 
@@ -385,9 +386,8 @@ let index = 0
 
         option.addEventListener('click' , () => {
 
+        const activeOption = optionsQus.querySelector('.selected')
             if(optionsQus.querySelector('.selected')){
-
-                const activeOption = optionsQus.querySelector('.selected')
                 activeOption.classList.remove('selected')
             }
             console.log('click')
@@ -398,17 +398,41 @@ let index = 0
     }
     
     
+    // const checkAnswer = (event) => {
+    //     const selectedOption = event.target;
+       
+    //     const selectedAnswer = selectedOption.textContent;
+    //     console.log(selectedAnswer)
+    //     const correctAnswer = selectedOption.questionsArr.answer;
     
-    const CheckAnswer = () =>{
+    //     if (!selectedAnswer) {
+    //         message.textContent = "Please select an option!";
+    //         return;
+    //     }
+    
+    //     if (selectedAnswer === correctAnswer) {
+    //         score++;
+    //         message.textContent = "Correct!";
+    //     } else {
+    //         message.textContent = "Incorrect! The correct answer is: " + correctAnswer;
+    //     }
+    // }
+    // optionsQus.querySelectorAll('li').forEach((option) => {
+    //     option.addEventListener('click', checkAnswer);
+    // });
 
-
-    }
+    
+   
 /*----------------------------- Event Listeners -----------------------------*/
 
  startBtn.addEventListener('click' ,start ); 
  nextBtn.addEventListener('click'  ,nextQuestion)
- optionsQus.addEventListener('click' , CheckAnswer)
+//  optionsQus.addEventListener('click' , CheckAnswer)
 //  resetBtn.addEventListener('click' , playAgain )
+
+
+
+
 
 
 

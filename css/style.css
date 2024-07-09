@@ -155,8 +155,11 @@ box-shadow: 0 5px 0 0 #bbb;
 
  .selected{
 
-  background-color: #dd7017;
-  
+  background-color: #657ED4 !important;
+  color: black !important;
+  border-color: #657ED4 !important;
+  box-shadow: 0 5px 0 0 #bbb !important;
+  transform: scale(0.97) !important;
 
  }
 
