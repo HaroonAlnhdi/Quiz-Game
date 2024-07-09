@@ -153,6 +153,13 @@ box-shadow: 0 5px 0 0 #bbb;
    transform: scale(0.97);
  }
 
+ .selected{
+
+  background-color: #dd7017;
+  
+
+ }
+
  .end-container{
 
    /* background-color: rgb(221, 255, 0); */

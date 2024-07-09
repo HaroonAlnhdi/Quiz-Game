@@ -315,6 +315,7 @@ let index = 0
        messeageContainer.hidden = false
        showQuestions(index);
        Timer(1)
+       
     }
 
        
@@ -347,6 +348,7 @@ let index = 0
         console.log('End of questions');
         messsage.innerText = " Complite Questions , Time: " + finaltime ;
         stopTimer() 
+        
     }
 }
 
@@ -371,16 +373,41 @@ let index = 0
             li.textContent = options[idx];
             optionsList.appendChild(li);
         });
-
        
+        selectOption();
     };
     
-   
 
+
+    function selectOption() {
+
+       optionsQus.querySelectorAll('li').forEach((option) => {
+
+        option.addEventListener('click' , () => {
+
+            if(optionsQus.querySelector('.selected')){
+
+                const activeOption = optionsQus.querySelector('.selected')
+                activeOption.classList.remove('selected')
+            }
+            console.log('click')
+            option.classList.add('selected')
+            
+        })
+       })
+    }
+    
+    
+    
+    const CheckAnswer = () =>{
+
+
+    }
 /*----------------------------- Event Listeners -----------------------------*/
 
  startBtn.addEventListener('click' ,start ); 
  nextBtn.addEventListener('click'  ,nextQuestion)
+ optionsQus.addEventListener('click' , CheckAnswer)
 //  resetBtn.addEventListener('click' , playAgain )
 
 
