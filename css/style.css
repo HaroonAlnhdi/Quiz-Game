@@ -243,18 +243,89 @@ box-shadow: 0 5px 0 0 #bbb;
 
   .options{
     height: auto;
-    width: 75vw;
+    width: 80vw;
   }
 
+  .start-container {
+
+
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .start-button{
+
+    font-size: 1.0rem;
+
+  }
+
+  .start-button:hover{
+
+    background-color:#3668c1;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .messsage-container{
+
+    
+    text-align: center;
+    margin: 0 auto;
+    color: black;
+    font-size: 17px;
+    font-weight: 200;
+    
+ }
 
 }
 
  @media (max-width: 999px)  {
 
-  .reset , .Next {
+  /* .reset , .Next {
     padding: 0px 0 0px 0;
     width: 13vw;
-  }
+  } */
+
+  .questions-container{
+    width: 80vw;
+    margin: 0 auto;
+    }
+  
+    .options{
+      height: auto;
+      width: 70vw;
+    }
+  
+    .start-container {
+  
+  
+      width: 90vw;
+      margin: 0 auto;
+    }
+  
+    .start-button{
+  
+      font-size: 1.0rem;
+  
+    }
+  
+    .start-button:hover{
+  
+      background-color:#3668c1;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  
+  .messsage-container{
+
+    
+    text-align: center;
+    margin: 0 auto;
+    color: black;
+    font-size: 17px;
+    font-weight: 200;
+    
+ }
     
   }
 
