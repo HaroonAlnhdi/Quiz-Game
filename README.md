@@ -39,6 +39,7 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 * HTML
 * CSS
 * JavaScript
+* GitHub
 ***
 
 <h2 align="center">Getting Started</h2>
