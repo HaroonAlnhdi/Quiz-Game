@@ -350,7 +350,14 @@ let index = 0
             dislayCountQueston.innerHTML = 1 + index ; 
             
              return showQuestions(index); 
-    }else {
+    }
+    // else if (nextBtn.disabled = false){
+
+    //     message.textContent = "Please select an option!";
+    // }
+    
+    
+    else {
         console.log('End of questions');
         message.innerText = " Complite Questions , Time: " + finaltime + ' Seconds .   Score : '+ score +'  Wrong Answers: ' + wrongAnswers;
         stopTimer() 
@@ -414,16 +421,21 @@ let index = 0
             const selectedAnswer = activeOption.textContent;
             const correctAnswer = questionsArr[index].answer;
 
+            // Chack  if Answer is currect than add Score and claulate score persent .
             if (selectedAnswer === correctAnswer) {
                 score++;
                 scorePersent = (score/25)*100
                 scorePersentDisplay.innerHTML = scorePersent
                 message.textContent = "Correct!";
-            } else {
+
+            // Chack if answer is wrong than display message.    
+            } else  {
                 wrongAnswers++;
                 message.textContent = `Incorrect! The correct answer is: ${correctAnswer}`;
             }
-        } else {
+
+
+        } else  {
             message.textContent = "Please select an option!";
         }
     };

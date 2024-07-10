@@ -226,6 +226,21 @@ box-shadow: 0 5px 0 0 #bbb;
 
  /* Media Quary */
 
+ @media(max-width:400px){
+
+  .questions-container{
+  width: 90vw;
+  margin: 0 auto;
+  }
+
+  .options{
+    height: auto;
+    width: 75vw;
+  }
+
+
+}
+
  @media (max-width: 999px)  {
 
   .reset , .Next {
@@ -234,3 +249,7 @@ box-shadow: 0 5px 0 0 #bbb;
   }
     
   }
+
+
+
+ 
