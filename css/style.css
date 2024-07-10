@@ -205,9 +205,9 @@ box-shadow: 0 5px 0 0 #bbb;
     
  }
 
- .messsage-container > p {
+ /* .messsage-container > p {
   font-size: larger;
- }
+ } */
 
  .gamename{
     text-align: center;

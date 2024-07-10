@@ -102,13 +102,13 @@ const questionsArr = [
     },
     {
     id: 12,
-    question: "Which HTML attribute is used to define inline styles?",
-    answer: "style",
+    question: "Which CSS property is used to add shadows to text?",
+    answer: "text-shadow",
     options: [
-        "style",
-        "class",
-        "id",
-        "styles"
+        "font-shadow",
+        "text-shadow",
+        "shadow",
+        "text-decoration"
     ]
     },
     {
@@ -321,8 +321,8 @@ let index = 0
        Timer(1);
     }
 
-       
-        let counter
+    //timer function      
+    let counter
     const Timer = (time) => { 
    
         counter = setInterval(timer,1000)
@@ -334,12 +334,13 @@ let index = 0
         }
     
     }
-
+    // stop timer function 
     const stopTimer = () => {
       clearInterval(counter); 
        
     };
 
+            // when user click next then increase index by 1  if  reach to last question than print  result message  and stop timer .
     const nextQuestion =() =>{
         // console.log('click')
         checkAnswer();
@@ -349,7 +350,13 @@ let index = 0
             dislayCountQueston.innerHTML = 1 + index ; 
             
              return showQuestions(index); 
-    }
+      }
+
+    //   else if (nextBtn.disabled = true){
+
+    //          message.style.color = 'Black';
+    //         message.textContent = "Please select an option!";
+    //   }
     
     
     else {
@@ -358,7 +365,7 @@ let index = 0
         const result = " <span class='result'> Result:</span> Time: " + finaltime + ' Seconds | Score : ' + scorePersent + '% | Currect Answers : '+ score +' | Wrong Answers: ' + wrongAnswers;
         message.innerHTML = result;
         message.style.color = "#3626A7";
-        document.querySelector('.result').style.color = "#c2090";
+        document.querySelector('.result').style.color = "#c20900";
         stopTimer() 
         nextBtn.disabled = true;
         resetBtn.hidden = false;
@@ -402,7 +409,6 @@ let index = 0
 
         const activeOption = optionsQus.querySelector('.selected')
             if(optionsQus.querySelector('.selected')){
-                message.innerText = " Please Select Answer "
                 activeOption.classList.remove('selected')
             }
             // console.log('click')
@@ -438,11 +444,12 @@ let index = 0
 
 
         } else  {
-            message.style.color = 'black'
+           
             message.textContent = "Please select an option!";
+          
         }
 
-        // Hide the message after 2 seconds
+        // Hide the message after 1 seconds
         if (index < questionsArr.length - 1) {
             setTimeout(() => {
                 message.textContent = '';
