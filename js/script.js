@@ -305,6 +305,8 @@ let index = 0
  const timeDisplay = document.getElementById('time');
  const dislayCountQueston = document.querySelector('#correct-score')
  const scorePersentDisplay =document.querySelector('#scorePersent')
+ const moon = document.querySelector('.fa-moon')
+ const sun = document.querySelector('.fa-sun')
 //  console.log(startBtn);
 //  console.log(body)
 
@@ -463,6 +465,29 @@ let index = 0
         location.reload();
     };
     
+    const darkmode = () => {
+    const mainContainer = document.querySelector('.main-container');
+    const startcont = document.querySelector('.start-container');
+    const footer = document.querySelector('footer')
+    
+    // Add dark mode classes
+    mainContainer.classList.add('dark');
+    startcont.classList.add('dark');
+    questionsContainer.classList.add('dark');
+    footer.classList.add('dark');
+    }
+    
+    const lightmode = () => {
+        const mainContainer = document.querySelector('.main-container');
+        const footer = document.querySelector('footer')
+        let startcont = document.querySelector('.start-container');
+
+         // Remove dark mode classes
+        mainContainer.classList.remove('dark');
+        startcont.classList.remove('dark');
+        questionsContainer.classList.remove('dark');
+        footer.classList.remove('dark');
+    }
     
    
 /*----------------------------- Event Listeners -----------------------------*/
@@ -470,8 +495,8 @@ let index = 0
  startBtn.addEventListener('click' ,start ); 
  nextBtn.addEventListener('click'  ,nextQuestion)
  resetBtn.addEventListener('click' , playAgain )
-
-
+ sun.addEventListener('click' ,lightmode)
+ moon.addEventListener('click' ,darkmode)
 
 
 

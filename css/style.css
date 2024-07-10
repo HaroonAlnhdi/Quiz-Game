@@ -3,7 +3,11 @@
  *{
         box-sizing: border-box;
  }
+ .dark{
 
+  background-color: #2f2f2f !important; 
+  color: #f9f7f1 !important;
+ }
 
  body{
     margin: 0;
@@ -240,7 +244,9 @@ box-shadow: 0 5px 0 0 #bbb;
   width: 90vw;
   margin: 0 auto;
   }
-
+  .rules{
+    margin: auto;
+   }
   .options{
     height: auto;
     width: 80vw;
@@ -277,6 +283,8 @@ box-shadow: 0 5px 0 0 #bbb;
     
  }
 
+
+
 }
 
  @media (max-width: 999px)  {
@@ -285,6 +293,7 @@ box-shadow: 0 5px 0 0 #bbb;
     padding: 0px 0 0px 0;
     width: 13vw;
   } */
+   
 
   .questions-container{
     width: 80vw;
