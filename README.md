@@ -44,10 +44,7 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 
 <h2 align="center">Getting Started</h2>
 
-##### Sign up and sign in as a new user and then walk through the Ranger creation page to begin your warband.
-##### A Trello board was used to keep track of development progress and can be viewed [here](URL).
-
-##### The project itself was deployed and can be viewed [here](URL).
+##### The project itself was deployed and can be viewed [here](https://github.com/HaroonAlnhdi/Quiz-Game/tree/main).
 
 ***
 
@@ -59,29 +56,36 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 <img src="Images/p3.jpg" alt="drawing" width="800" height="400"/>
 </p>
 
+<p align="center">This image shows the overall layout of the project, highlighting the structure and user interface elements.</p>
+
 <p align="center"><b>Colors</b></p>
 
 <p align="center">
 <img src="Images/p2.jpg" alt="drawing" width="800" height="400"/>
 </p>
+<p align="center">This image displays the color scheme used throughout the quiz game, demonstrating the visual design and aesthetic.</p>
 
 <p align="center"><b>Home Page</b></p>
 
 <p align="center">
 <img src="Images/HomePage.jpg" alt="drawing" width="800" height="400"/>
 </p>
-
+<p align="center">The home page of the quiz game, where users can start the quiz and access other features.</p>
 <p align="center"><b>Question Page</b></p>
 
 <p align="center">
 <img src="Images/QuestionPage.jpg" alt="drawing" width="800" height="400"/>
 </p>
 
+<p align="center">An example of a question page, showing a single question with multiple answer options for the user to choose from.</p>
+
 <p align="center"><b>Display Result</b></p>
 
 <p align="center">
 <img src="Images/Result.jpg" alt="drawing" width="800" height="400"/>
 </p>
+
+<p align="center">The results page, where users can see their final score, time taken, and a summary of correct/incorrect answers.</p>
 
 ### ***Future Updates***
 
