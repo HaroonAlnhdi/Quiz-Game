@@ -44,7 +44,7 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 
 <h2 align="center">Getting Started</h2>
 
-##### The project itself was deployed and can be viewed [here](https://github.com/HaroonAlnhdi/Quiz-Game/tree/main).
+##### The project itself was deployed and can be viewed [here](https://haroonalnhdi.github.io/Quiz-Game/).
 
 ***
 
