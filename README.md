@@ -16,7 +16,7 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 </p>
 
 
-<p style="text-align: center; font-weight: bold;">User Stories</p>
+<p style="text-align: center; ">User Stories</p>
 
 
 1. The user should be able to see a landing page when I arrive at the website to know I'm in the right place.
@@ -35,7 +35,7 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 
 7. the user should be able to view time of the  questions .
 
-<p style="text-align: center; font-weight: bold;">How To Play</p>
+<p style="text-align: center;">How To Play</p>
 
 1. **Start a Quiz:** Click start quiz .
 2. **Read the Question**: Carefully read the displayed question.
@@ -53,6 +53,7 @@ Quiz games are interactive games designed to test and enhance a player's knowled
 * HTML
 * CSS
 * JavaScript
+* GitHub
 ***
 
 <h2 align="center"> Getting Started </h2>
