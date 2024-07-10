@@ -115,9 +115,11 @@ Integrate social media sharing to post scores
 
 ### ***Credits***
 
-##### Funny Images: [DuckDuckGo Search](http://www.duckduckgo.com)
+##### Javascript Reference: [JS Search](https://www.thaicreate.com/javascript-manual/index.htm)
 
-##### Markdown Guide: [ia.net](https://ia.net/writer/support/general/markdown-guide)
+##### Colors: [Coolors.com](https://coolors.co/d6e681-babf95-c4ad83-c6b677-dbb957)
 
-##### Markdown Cheatsheet: [GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+##### Icoins: [fontawesome.com](https://fontawesome.com/search)
+##### HTML elements reference: [developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
 ***
