@@ -315,10 +315,10 @@ let index = 0
         
        startcont.hidden = true ;
        questionsContainer.hidden = false ;
-       messeageContainer.hidden = false
+       messeageContainer.hidden = false;
+       resetBtn.hidden = true
        showQuestions(index);
-       Timer(1)
-    //    checkAnswer();
+       Timer(1);
     }
 
        
@@ -350,10 +350,6 @@ let index = 0
             
              return showQuestions(index); 
     }
-    // else if (nextBtn.disabled = false){
-
-    //     message.textContent = "Please select an option!";
-    // }
     
     
     else {
@@ -365,7 +361,7 @@ let index = 0
         document.querySelector('.result').style.color = "#c2090";
         stopTimer() 
         nextBtn.disabled = true;
-        
+        resetBtn.hidden = false;
     }
 }
 
