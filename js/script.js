@@ -305,7 +305,6 @@ let index = 0
  const timeDisplay = document.getElementById('time');
  const dislayCountQueston = document.querySelector('#correct-score')
  const scorePersentDisplay =document.querySelector('#scorePersent')
-
 //  console.log(startBtn);
 //  console.log(body)
 
@@ -358,8 +357,12 @@ let index = 0
     
     
     else {
-        console.log('End of questions');
-        message.innerText = " Complite Questions , Time: " + finaltime + ' Seconds .   Score : '+ score +'  Wrong Answers: ' + wrongAnswers;
+        // console.log('End of questions');
+        
+        const result = " <span class='result'> Result:</span> Time: " + finaltime + ' Seconds | Score : ' + scorePersent + '% | Currect Answers : '+ score +' | Wrong Answers: ' + wrongAnswers;
+        message.innerHTML = result;
+        message.style.color = "#3626A7";
+        document.querySelector('.result').style.color = "#c2090";
         stopTimer() 
         nextBtn.disabled = true;
         
@@ -424,18 +427,22 @@ let index = 0
             // Chack  if Answer is currect than add Score and claulate score persent .
             if (selectedAnswer === correctAnswer) {
                 score++;
-                scorePersent = (score/25)*100
+                // get scorePersent in integer number 
+                scorePersent = Math.floor((score / 25) * 100);
                 scorePersentDisplay.innerHTML = scorePersent
+                message.style.color = 'green';
                 message.textContent = "Correct!";
 
             // Chack if answer is wrong than display message.    
             } else  {
                 wrongAnswers++;
-                message.textContent = `Incorrect! The correct answer is: ${correctAnswer}`;
+                message.style.color = 'red';
+                message.textContent = `Incorrect!`;
             }
 
 
         } else  {
+            message.style.color = 'black'
             message.textContent = "Please select an option!";
         }
     };

@@ -199,6 +199,14 @@ box-shadow: 0 5px 0 0 #bbb;
     /* background-color: blanchedalmond; */
     text-align: center;
     margin: 15px 0 0 0;
+    color: black;
+    /* border: solid 1px black; */
+    font-weight: 600;
+    
+ }
+
+ .messsage-container > p {
+  font-size: larger;
  }
 
  .gamename{
