@@ -428,7 +428,7 @@ let index = 0
             if (selectedAnswer === correctAnswer) {
                 score++;
                 // get scorePersent in integer number 
-                scorePersent = Math.floor((score / 25) * 100);
+                scorePersent = Math.floor((score / questionsArr.length) * 100);
                 scorePersentDisplay.innerHTML = scorePersent
                 message.style.color = 'green';
                 message.textContent = "Correct!";
@@ -444,6 +444,13 @@ let index = 0
         } else  {
             message.style.color = 'black'
             message.textContent = "Please select an option!";
+        }
+
+        // Hide the message after 2 seconds
+        if (index < questionsArr.length - 1) {
+            setTimeout(() => {
+                message.textContent = '';
+            }, 1000);
         }
     };
 
